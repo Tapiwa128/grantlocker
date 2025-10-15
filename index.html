@@ -1,1166 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <title>Zambezi Linen Co.</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="zambezi Linen" content="">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Everyday Relief & Rewards Hub</title>
+  <meta name="description" content="Discover current US offers for family assistance, grocery testing, and Best Buy reward access. Updated daily." />
+  <style>
+    :root{
+      --bg:#f6fbff; --card:#ffffff; --accent:#1f6feb; --muted:#6b7280; --glass:rgba(255,255,255,0.7);
+      --radius:16px; --shadow:0 8px 30px rgba(17,24,39,0.08);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,var(--bg),#eef7ff 60%); color:#0f172a; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; padding:24px; display:flex; align-items:flex-start; justify-content:center;
+    }
+    .container{max-width:980px; width:100%;}
 
-  <!--Whats App Start -->
+    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:var(--shadow)}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
 
-  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-  <div class="elfsight-app-bd30ee46-d86b-4ca2-8124-99e1293f4d66" data-elfsight-app-lazy></div>
+    .hero{background:var(--card);border-radius:20px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:18px}
+    .hero-top{display:flex;gap:16px;align-items:center}
+    .heading{font-size:22px;margin:0}
+    .sub{color:var(--muted);font-size:14px;margin:0}
 
-  <!--Whats App End -->
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.95));border-radius:14px;padding:16px;box-shadow:var(--shadow);border:1px solid rgba(15,23,42,0.03)}
+    .card h3{margin:0 0 8px 0;font-size:16px}
+    .card p{margin:0 0 12px 0;color:var(--muted);font-size:13px}
+    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    .small{font-size:12px;color:var(--muted)}
 
+    .urgency{margin-top:12px;padding:10px;border-radius:10px;background:#fff6f3;border:1px solid rgba(249,115,22,0.08);display:flex;align-items:center;justify-content:space-between}
+    .trust{display:flex;gap:10px;align-items:center;margin-top:14px}
+    .trust .pill{background:#fff;border-radius:999px;padding:8px 10px;border:1px solid rgba(15,23,42,0.04);font-size:13px;color:var(--muted)}
 
+    footer{margin-top:14px;color:var(--muted);font-size:12px}
 
+    /* responsive */
+    @media (max-width:880px){
+      .cards{grid-template-columns:1fr;}
+      .hero{padding:16px}
+      .logo{width:48px;height:48px;font-size:16px}
+      h1{font-size:18px}
+    }
 
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
-  <link rel="stylesheet" type="text/css" media="all"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/vendor.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <!-- script
-    ================================================== -->
-  <script src="js/modernizr.js"></script>
+    /* subtle animations */
+    .pulse{animation:pulse 3s infinite}
+    @keyframes pulse{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+  </style>
 </head>
-
 <body>
-
-  <div class="preloader-wrapper">
-    <div class="preloader">
-    </div>
-  </div>
-
-  <div class="search-popup">
-    <div class="search-popup-container">
-
-      <form role="search" method="get" class="search-form" action="">
-        <input type="search" id="search-form" class="search-field" placeholder="Type and press enter" value=""
-          name="s" />
-        <button type="submit" class="search-submit"><a href="#"><i class="icon icon-search"></i></a></button>
-      </form>
-
-      <h5 class="cat-list-title">Browse Categories</h5>
-
-      <ul class="cat-list">
-        <li class="cat-list-item">
-          <a href="shop.html" title="Men Jackets">Men Jackets</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="shop.html" title="Fashion">Fashion</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="shop.html" title="Casual Wears">Casual Wears</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="shop.html" title="Women">Women</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="shop.html" title="Trending">Trending</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="shop.html" title="Hoodie">Hoodie</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="shop.html" title="Kids">Kids</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <header id="header">
-    <div id="header-wrap">
-      <nav class="secondary-nav border-bottom">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-md-4 header-contact">
-              <p>Let's talk! <strong>+263 77 627 0986</strong>
-              </p>
-            </div>
-            <div class="col-md-4 col-sm-12 user-items">
-            </div>
-          </div>
-        </div>
-      </nav>
-      <nav class="primary-nav padding-small">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-lg-2 col-md-2">
-              <div class="main-logo">
-                <a href="index.html">
-                  <img src="images/logo.jpg" alt="logo">
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-10 col-md-10">
-              <div class="navbar">
-
-                <div id="main-nav" class="stellarnav d-flex justify-content-end right">
-                  <ul class="menu-list">
-
-                    <li class="menu-item has-sub">
-                      <a href="index.html" class="item-anchor active d-flex align-item-center"
-                        data-effect="Home">Home</a>
-
-                    </li>
-
-                    <li><a href="about.html" class="item-anchor" data-effect="About">About</a></li>
-
-                    <li class="menu-item has-sub">
-                      <a href="shop.html" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop</a>
-
-
-                    <li class="menu-item has-sub">
-                      <a href="blog.html" class="item-anchor d-flex align-item-center" data-effect="Blog">Blog</a>
-
-
-
-                    <li><a href="contact.html" class="item-anchor" data-effect="Contact">Contact</a></li>
-
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <section id="billboard" class="overflow-hidden">
-
-    <button class="button-prev">
-      <i class="icon icon-chevron-left"></i>
-    </button>
-    <button class="button-next">
-      <i class="icon icon-chevron-right"></i>
-    </button>
-    <div class="swiper main-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"
-          style="background-image: url('images/Navy\ Blue\ Futuristic\ Virtual\ Technology\ Banner.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
-          <div class="banner-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <h2 class="banner-title">Hotel Essentials</h2>
-                  <p>.</p>
-                  <div class="btn-wrap">
-                    <a href="shop.html" class="btn btn-light btn-medium d-flex align-items-center" tabindex="0">Shop it
-                      now <i class="icon icon-arrow-io"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide"
-          style="background-image: url('images/Navy Blue Futuristic Virtual Technology Banner (2).jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
-          <div class="banner-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <h2 class="banner-title">Luxury for less</h2>
-                  <p></p>
-                  <div class="btn-wrap">
-                    <a href="shop.html" class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center"
-                      tabindex="0">Shop it now <i class="icon icon-arrow-io"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">ER</div>
+        <div>
+          <h1>Everyday Relief & Rewards</h1>
+          <p class="lead">Discover active opportunities trusted by U.S. households — updated daily.</p>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="small">U.S. Residents • Mobile-first</div>
+    </header>
 
-  <section id="featured-products" class="product-store padding-large">
-    <div class="container">
-      <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
-        <h2 class="section-title">Featured Products</h2>
-        <div class="btn-wrap">
-          <a href="shop.html" class="d-flex align-items-center">View all products <i
-              class="icon icon icon-arrow-io"></i></a>
+    <main class="hero" role="main">
+      <div class="hero-top">
+        <div style="flex:1">
+          <h2 class="heading">Choose what matters most to you today 👇</h2>
+          <p class="sub">New offers open and close often — check what’s active in seconds.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+          <div class="pill small">Updated: <span id="lastUpdated">—</span></div>
+          <div class="small" style="color:var(--muted)">Secure • No spam</div>
         </div>
       </div>
 
-
-      <div class="swiper product-swiper overflow-hidden">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="product-item">
-              <div class="image-holder">
-                <img src="images/unisex-waffle-dressing-gown-2.jpg" alt="Books" class="product-image">
-              </div>
-              <div class="cart-concern">
-                <div class="cart-button d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                      class="icon icon-arrow-io"></i>
-                  </button>
-                  <button type="button" class="view-btn tooltip
-                        d-flex">
-                    <i class="icon icon-screen-full"></i>
-                    <span class="tooltip-text">Quick view</span>
-                  </button>
-                  <button type="button" class="wishlist-btn">
-                    <i class="icon icon-heart"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="product-detail">
-                <h3 class="product-title">
-                  Bathrobe
-                </h3>
-                <span class="item-price text-primary">$40.00</span>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="swiper-slide">
-            <div class="product-item">
-              <div class="image-holder">
-                <img src="images/61S26r+A9vL._AC_UY900_.jpg" alt="Books" class="product-image">
-              </div>
-              <div class="cart-concern">
-                <div class="cart-button d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                      class="icon icon-arrow-io"></i>
-                  </button>
-                  <button type="button" class="view-btn tooltip
-                        d-flex">
-                    <i class="icon icon-screen-full"></i>
-                    <span class="tooltip-text">Quick view</span>
-                  </button>
-                  <button type="button" class="wishlist-btn">
-                    <i class="icon icon-heart"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="product-detail">
-                <h3 class="product-title">
-                  Spa Slipers
-                </h3>
-                <span class="item-price text-primary">$38.00</span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-item">
-              <div class="image-holder">
-                <img src="images/fairfield-store-ffi-103-wh-flat-sheet_xlrg.jpg" alt="Books" class="product-image">
-              </div>
-              <div class="cart-concern">
-                <div class="cart-button d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                      class="icon icon-arrow-io"></i>
-                  </button>
-                  <button type="button" class="view-btn tooltip
-                        d-flex">
-                    <i class="icon icon-screen-full"></i>
-                    <span class="tooltip-text">Quick view</span>
-                  </button>
-                  <button type="button" class="wishlist-btn">
-                    <i class="icon icon-heart"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="product-detail">
-                <h3 class="product-title">
-                  Hotel Linen
-                </h3>
-                <span class="item-price text-primary">$44.00</span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-item">
-              <div class="image-holder">
-                <img src="images/hotel-towel-1677139072-6774928.jpeg" alt="Books" class="product-image">
-              </div>
-              <div class="cart-concern">
-                <div class="cart-button d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                      class="icon icon-arrow-io"></i>
-                  </button>
-                  <button type="button" class="view-btn tooltip
-                        d-flex">
-                    <i class="icon icon-screen-full"></i>
-                    <span class="tooltip-text">Quick view</span>
-                  </button>
-                  <button type="button" class="wishlist-btn">
-                    <i class="icon icon-heart"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="product-detail">
-                <h3 class="product-title">
-                  Towels
-                </h3>
-                <span class="item-price text-primary">$33.00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <section id="latest-collection">
-    <div class="container">
-      <div class="product-collection row">
-        <div class="col-lg-7 col-md-12 left-content">
-          <div class="collection-item">
-            <div class="products-thumb">
-              <img src="images/Untitled design (5).jpg" alt="collection item" class="large-image image-rounded">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
-
-              <h3 class="item-title">Hotel Linen</h3>
-
-              <div class="btn-wrap">
-                <a href="shop.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5 col-md-12 right-content flex-wrap">
-          <div class="collection-item top-item">
-            <div class="products-thumb">
-              <img src="images/1690541824725_7635b63b-bb05-4fbb-94c2-3ca99bc93a57.avif" alt="collection item"
-                class="small-image image-rounded">
-            </div>
-            <div class="col-md-6 product-entry">
-              <div class="categories"></div>
-              <h4 class="item-title">Bathroom Amenities.</h4>
-              <div class="btn-wrap">
-                <a href="shop.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="collection-item bottom-item">
-            <div class="products-thumb">
-              <img src="images/Marriott-towel-set-MAR-320-01-SET-BT-WH_lrg (1).jpg" alt="collection item"
-                class="small-image image-rounded">
-            </div>
-            <div class="col-md-6 product-entry">
-              <div class="categories"></div>
-              <h3 class="item-title">Towels.</h3>
-              <div class="btn-wrap">
-                <a href="shop.html" class="d-flex align-items-center">shop collection <i class="icon icon-arrow-io"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="shopify-grid padding-large">
-    <div class="container">
-      <div class="row">
-
-        <section id="selling-products" class="col-md-12 product-store">
-          <div class="container">
-            <ul class="tabs list-unstyled">
-              <li data-tab-target="#all" class="active tab">All</li>
-              <li data-tab-target="#bathroom" class="tab">bathroom</li>
-              <li data-tab-target="#dinning" class="tab">dinning</li>
-            </ul>
-            <div class="tab-content">
-              <div id="all" data-tab-content class="active">
-                <div class="row d-flex flex-wrap">
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/61S26r+A9vL._AC_UY900_.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                    <!--Start Product -->
-
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Spa Slipers
-                      </h3>
-                      <div class="item-price text-primary">$2.50</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/unisex-waffle-dressing-gown-2.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                    <!--End Product -->
-
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Bathrobe
-                      </h3>
-                      <div class="item-price text-primary">$77.00 - $140.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/hotel-towel-1677139072-6774928.jpeg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Towels
-                      </h3>
-                      <div class="item-price text-primary">$8.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/fairfield-store-ffi-103-wh-flat-sheet_xlrg.jpg" alt="Books"
-                        class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Hotel Linen
-                      </h3>
-                      <div class="item-price text-primary">$30.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/hotel-laundry-bag.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Laundry Bag
-                      </h3>
-                      <div class="item-price text-primary">$2.50</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/51XW1SKIM-L._AC_SL1001_.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Table Cloth
-                      </h3>
-                      <div class="item-price text-primary">$30.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/zln6874-image-9a43e6ff-53d8-4ab0-ad19-7cebfe6accd0.jpg" alt="Books"
-                        class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        INDOOR &
-                        OUTDOOR
-                        BINS
-                      </h3>
-                      <div class="item-price text-primary">$42.00 - $462.00
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/51M+u1Ddi2L._AC_UF1000,1000_QL80_.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        DOVE PRODUCTS
-                      </h3>
-                      <div class="item-price text-primary">$35.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/collection.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Still Room Collection
-                      </h3>
-                      <div class="item-price text-primary">$55.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/91Yynl3BpxL.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Coasters
-                      </h3>
-                      <div class="item-price text-primary">$12.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/white-paper-napkin-500x500-1.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Napkins
-                      </h3>
-                      <div class="item-price text-primary">$2.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/Natural_Rattan_Placemats_A_008_1707x.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Placemates
-                      </h3>
-                      <div class="item-price text-primary">$13.00</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div id="dinning" data-tab-content>
-                <div class="row d-flex flex-wrap">
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/white-paper-napkin-500x500-1.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Napkins
-                      </h3>
-                      <div class="item-price text-primary">$2.00</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/91Yynl3BpxL.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Coasters
-                      </h3>
-                      <div class="item-price text-primary">$12.00</div>
-                    </div>
-                  </div>
-
-
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/51XW1SKIM-L._AC_SL1001_.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        ingle-product.html">Table Cloth
-                      </h3>
-                      <div class="item-price text-primary">$30.00</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div id="bathroom" data-tab-content>
-                <div class="row d-flex flex-wrap">
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/61S26r+A9vL._AC_UY900_.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                    <!--Start Product -->
-
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        Spa Slipers
-                      </h3>
-                      <div class="item-price text-primary">$2.50</div>
-                    </div>
-                  </div>
-                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                    <div class="image-holder">
-                      <img src="images/51M+u1Ddi2L._AC_UF1000,1000_QL80_.jpg" alt="Books" class="product-image">
-                    </div>
-                    <div class="cart-concern">
-                      <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="add-to-cart btn-wrap cart-link d-flex align-items-center">add to
-                          cart <i class="icon icon-arrow-io"></i>
-                        </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
-                          <i class="icon icon-screen-full"></i>
-                          <span class="tooltip-text">Quick view</span>
-                        </button>
-                        <button type="button" class="wishlist-btn">
-                          <i class="icon icon-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="product-detail">
-                      <h3 class="product-title">
-                        DOVE PRODUCTS
-                      </h3>
-                      <div class="item-price text-primary">$35.00</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-        </section>
-      </div>
-    </div>
-  </div>
-
-  <section class="shoppify-section-banner">
-    <div class="container">
-      <div class="product-collection">
-        <div class="left-content collection-item">
-          <div class="products-thumb">
-            <img
-              src="images/ai-generated-set-of-clean-white-towels-set-stacked-on-bed-in-hotel-room-leisure-vacation-and-travel-concept-template-background-banner-with-copy-space-area-free-photo.jpg"
-              alt="collection item" class="large-image image-rounded" style="height: 800px;">
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
-            <div class="categories"></div>
-            <h3 class="item-title" style="color: black;">The casual selection.</h3>
-
-            <div class="btn-wrap">
-              <a href="shop.html" class="d-flex align-items-center"
-                style="font-size: 30px;font-weight: 900;color: black;">shop
-                collection <i class="icon icon-arrow-io"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="quotation" class="align-center padding-large">
-    <div class="inner-content">
-      <h2 class="section-title divider">Quote of the day</h2>
-      <blockquote>
-        <q>The right tools make all the difference</q>
-        <div class="author-name">- Unknown</div>
-      </blockquote>
-    </div>
-  </section>
-
-
-  <section id="subscribe" class="padding-large">
-    <div class="container">
-      <div class="row">
-        <div class="block-text col-md-6">
-          <div class="section-header">
-            <h2 class="section-title">Subscribe to our Newsletter </h2>
-          </div>
-          <p>Send Us Your email to subscribe to our newsletter</p>
-        </div>
-        <div class="subscribe-content col-md-6">
-          <form action="javascript:document.querySelector('#form',function(e){e.preventDefault()})" id="form"
-            class="d-flex justify-content-between">
-            <input type="text" name="email" placeholder="Enter your email addresss here">
-            <button class="btn btn-dark">Subscribe Now</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <hr>
-  <section id="latest-blog" class="padding-large">
-    <div class="container">
-      <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
-        <h2 class="section-title">Our Blog</h2>
-        <div class="btn-wrap align-right">
-          <a href="blog.html" class="d-flex align-items-center">Read All Articles <i
-              class="icon icon icon-arrow-io"></i>
-          </a>
-        </div>
-      </div>
-      <div class="row d-flex flex-wrap">
-        <article class="col-md-4 post-item">
-          <div class="image-holder zoom-effect">
-            <a href="single-post.html">
-              <img src="images/hotel-laundry-bag.jpg" alt="post" class="post-image" style="height: 500px;">
-            </a>
-          </div>
-          <div class="post-content d-flex">
-            <div class="meta-date">
-              <div class="meta-day text-primary">22</div>
-              <div class="meta-month">Aug-2021</div>
-            </div>
-            <div class="post-header">
-              <h3 class="post-title">
-                <a href="single-post.html">top 10 most liked things by clients</a>
-              </h3>
-              <a href="blog.html" class="blog-categories">Fashion</a>
-            </div>
-          </div>
+      <section class="cards" aria-label="offers">
+        <!-- CARD 1: Family Assistance -->
+        <article class="card" id="card-family">
+          <h3>Household & Family Support</h3>
+          <p>Access vetted resources for housing, health coverage, dental care, childcare support, and money-saving programs.</p>
+          <a id="linkFamily" class="cta" href="#" target="_blank" rel="noopener">See Active Family Programs</a>
         </article>
-        <article class="col-md-4 post-item">
-          <div class="image-holder zoom-effect">
-            <a href="single-post.html">
-              <img src="images/fairfield-store-ffi-103-wh-flat-sheet_xlrg.jpg" alt="post" class="post-image"
-                style="height: 500px;">
-            </a>
-          </div>
-          <div class="post-content d-flex">
-            <div class="meta-date">
-              <div class="meta-day text-primary">25</div>
-              <div class="meta-month">Aug-2021</div>
-            </div>
-            <div class="post-header">
-              <h3 class="post-title">
-                <a href="single-post.html">Latest trends on bedroom material</a>
-              </h3>
-              <a href="blog.html" class="blog-categories">Trending</a>
-            </div>
-          </div>
-        </article>
-        <article class="col-md-4 post-item">
-          <div class="image-holder zoom-effect">
-            <a href="single-post.html">
-              <img src="images/Natural_Rattan_Placemats_A_008_1707x.jpg" alt="post" class="post-image"
-                style="height: 500px;">
-            </a>
-          </div>
-          <div class="post-content d-flex">
-            <div class="meta-date">
-              <div class="meta-day text-primary">28</div>
-              <div class="meta-month">Aug-2021</div>
-            </div>
-            <div class="post-header">
-              <h3 class="post-title">
-                <a href="single-post.html">Best Selling dinning Utensils</a>
-              </h3>
-              <a href="blog.html" class="blog-categories">Inspiration</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <footer id="footer">
-    <div class="container">
-      <div class="footer-menu-list">
-        <div class="row d-flex flex-wrap justify-content-between">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="footer-menu">
-              <h5 class="widget-title">Zambezi Linen</h5>
-              <ul class="menu-list list-unstyled">
-                <li class="menu-item">
-                  <a href="about.html">About us</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Conditions </a>
-                </li>
-                <li class="menu-item">
-                  <a href="blog.html">Our Blogs</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Careers</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Affiliate Programme</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Zambezi Linen Press</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="footer-menu">
-              <h5 class="widget-title">Customer Service</h5>
-              <ul class="menu-list list-unstyled">
-                <li class="menu-item">
-                  <a href="faqs.html">FAQ</a>
-                </li>
-                <li class="menu-item">
-                  <a href="contact.html">Contact</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Returns & Refunds</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Cookie Guidelines</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#">Delivery Information</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="footer-menu">
-              <h5 class="widget-title">Contact Us</h5>
-              <p>Do you have any questions or suggestions?<a href="mailto:info@zambezilinen.com"
-                  class="email">info@zambezilinen.com</a>
-              </p>
-              <p>Do you need assistance? Give us a call. <br>
-                <strong>+263 77 627 0986</strong>
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="footer-menu">
-              <h5 class="widget-title">About Us</h5>
-              <p>Welcome to Zambezi Linen Co, a dynamic and innovative company dedicated to enhancing your everyday
-                life. With a passion for excellence and a commitment to quality, we strive to deliver exceptional
-                products and services that exceed your expectations</p>
-              <div class="social-links">
-                <ul class="d-flex list-unstyled">
-                  <li>
-                    <a href="#">
-                      <i class="icon icon-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="icon icon-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="icon icon-youtube-play"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="icon icon-behance-square"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-  </footer>
+        <!-- CARD 2: Grocery Sampling -->
+        <article class="card" id="card-groceries">
+          <h3>Try & Review Groceries</h3>
+          <p>Join limited tester rounds to sample grocery products and share feedback — selected testers get real-size packs shipped.</p>
+          <a id="linkSamples" class="cta" href="#" target="_blank" rel="noopener">Apply for Grocery Testing</a>
+        </article>
 
-  <div id="footer-bottom">
-    <div class="container">
-      <div class="d-flex align-items-center flex-wrap justify-content-between">
-        <div class="copyright">
-          <p>Made by <a href="https://pakama tech.com/">Pakama Tech</a>
-        </div>
-        <div class="payment-method">
-          <p>Payment options :</p>
-          <div class="card-wrap">
-            <img src="images/visa-icon.jpg" alt="visa">
-            <img src="images/mastercard.jpg" alt="mastercard">
-            <img src="images/american-express.jpg" alt="american-express">
-          </div>
-        </div>
+        <!-- CARD 3: Best Buy Gift Card -->
+        <article class="card" id="card-rewards">
+          <h3>Exclusive Shopping Reward</h3>
+          <p>Check your access to limited reward cards usable for electronics, appliances, fitness gear, baby products and more.</p>
+          <a id="linkBestBuy" class="cta" href="#" target="_blank" rel="noopener">Check Reward Access</a>
+        </article>
+      </section>
+
+      <div class="urgency">
+        <div style="font-weight:700">⚠️ Limited Access Offers</div>
+        <div class="small">These rounds open & close without notice — updated automatically.</div>
       </div>
-    </div>
+
+      <div class="trust">
+        <div class="pill">✅ U.S. Residents Only</div>
+        <div class="pill">🔒 Secure Links</div>
+        <div class="pill">📄 Provider Terms Apply</div>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>© 2025 Everyday Relief & Rewards Hub</p>
+      <p style="margin-top:6px;color:var(--muted);font-size:12px">Disclaimer: This site connects users to third-party programs and offers. Participation is optional and subject to each provider’s terms.</p>
+    </footer>
   </div>
-
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const addToCartFP = document.querySelectorAll(
-        ".product-item .cart-concern .cart-button button[type=button]"
-      );
+    // ---- CONFIG: replace the placeholder URLs below with your CPA links ----
+    const CONFIG = {
+      family: 'https://YOUR_CPA_FAMILY_LINK_HERE',
+      samples: 'https://YOUR_CPA_SAMPLES_LINK_HERE',
+      bestbuy: 'https://YOUR_CPA_BESTBUY_LINK_HERE'
+    }
 
-      addToCartFP.forEach((item) => {
-        item.addEventListener("click", function () {
-          const image =
-            item.parentElement.parentElement.parentElement.firstElementChild
-              .firstElementChild;
+    // assign links
+    document.getElementById('linkFamily').href = CONFIG.family;
+    document.getElementById('linkSamples').href = CONFIG.samples;
+    document.getElementById('linkBestBuy').href = CONFIG.bestbuy;
 
-          const productDetails =
-            item.parentElement.parentElement.nextElementSibling;
+    // last updated auto date (UTC-0 formatted). You can replace this with a server-side date if desired.
+    const d = new Date();
+    const opts = { year:'numeric', month:'short', day:'numeric' };
+    document.getElementById('lastUpdated').textContent = d.toLocaleDateString('en-US', opts);
 
-          const pname = productDetails.firstElementChild;
-          const price = pname.nextElementSibling;
+    // small click trackers (optional) — helper only (no external calls)
+    function trackClick(offer){
+      try{console.log('CTA click', offer, new Date().toISOString())}catch(e){}
+    }
+    document.getElementById('linkFamily').addEventListener('click',()=>trackClick('family'));
+    document.getElementById('linkSamples').addEventListener('click',()=>trackClick('samples'));
+    document.getElementById('linkBestBuy').addEventListener('click',()=>trackClick('bestbuy'));
 
-          const data = {
-            image: image.getAttribute("src"),
-            pname: pname.textContent,
-            price: price.textContent,
-          };
-
-          const queryString = new URLSearchParams(data).toString();
-
-          const singlePostUrl = `single-post.html?${queryString}`;
-          window.location.href = singlePostUrl;
-        });
-      });
-
+    // Progressive enhancement: if a link is not set, point to a small info modal instead (keeps UX tidy)
+    ['linkFamily','linkSamples','linkBestBuy'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el.href || el.href.endsWith('#')){
+        el.addEventListener('click', (e)=>{e.preventDefault(); alert('Currently unavailable — try again later.')} );
+      }
     });
-
   </script>
-
-
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/items_functioon.js"></script>
 </body>
-
 </html>
